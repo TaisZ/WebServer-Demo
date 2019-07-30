@@ -1,0 +1,57 @@
+div{
+    width: 250px;
+    height: 50px;
+    border: 1px solid rebeccapurple;
+    text-align: center;
+    /**
+    当text-align设置为"justify"，每一行被展开为宽度相等，
+    左，右外边距是对齐（如杂志和报纸）。
+     */
+
+    /*
+    文本修饰：上划线 overline
+    下划线：underline
+    删除线：line-through
+    去掉文本修饰：none
+     */
+    text-decoration: underline;
+
+    /*
+    文本阴影：
+        颜色 x偏移值 y偏移值 浓度
+     */
+    text-shadow: springgreen 5px 5px 1px;
+
+    /**
+    设置行高，实现垂直居中
+     */
+    line-height: 50px;
+}
+
+a{
+    text-decoration: none;
+}
+
+span{
+    /*
+    字体大小： 像素
+    font-size: 30px;
+
+     */
+    /*
+    字体加粗:bold  去除加粗 normal
+     */
+    font-weight: bold;
+    /*
+    斜体
+    font-style: italic;
+
+     */
+    /*字体设置
+    font-family: Arial,sans-serif;
+    */
+    /*字体+大小设置*/
+    font: italic 15px Arial,sans-serif ;
+
+}
+

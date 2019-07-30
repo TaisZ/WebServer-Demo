@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tais Blog</title>
+</head>
+<body>
+<h1 align="center">HTML5 Learning Diary</h1>
+<center>Author:Tais Zuo</center>
+<hr>
+<h2>HTML5 Basic</h2>
+
+<!-- --------------------------分隔符------------------------------- -->
+
+<h3>一. 文本标签</h3>
+<ol type="1">
+    <li><code><b> &lt;!DOCTYPE html&gt; </b></code> -- 文档声明：告诉浏览器使用哪个版本的HTML，此写法默认最高版本 </li>
+    <li><code><b> &lt;h1&gt; </b></code> -- 1级标题，可一直用到h9 </li>
+    <li><code><b> &lt;p&gt; </b></code> -- 段落标签，会自动换行,自带上下间距 </li>
+    <li><code><b> &lt;hr&gt; </b></code> -- 水平分割线 </li>
+    <li><code><b> &lt;br&gt; </b></code> -- 换行符号 </li>
+    <li><code><b> &lt;b&gt; </b></code> -- 粗体文字 </li>
+</ol>
+
+<!-- --------------------------分隔符------------------------------- -->
+
+<h3>二. 列表标签:</h3>
+<code><b> 1. &lt;ul&gt; </b></code> -- unordered list的起始标签 <br>
+<code><b> 2. &lt;li&gt; </b></code> -- list item  <br>
+无序表的顺序如下图所示：
+<pre>
+    &lt;ul type="square"&gt;<br>
+        &lt;li&gt;貂蝉&lt;li&gt;<br>
+        &lt;li&gt;刘备&lt;li&gt;<br>
+        &lt;li&gt;孙尚香&lt;li&gt;<br>
+        &lt;li&gt;曹操&lt;li&gt;<br>
+    &lt;/ul&gt;
+</pre>
+得到以下输出：
+<ul type="square">
+    <li>貂蝉</li>
+    <li>刘备</li>
+    <li>孙尚香</li>
+    <li>曹操</li>
+</ul>
+
+<code><b>3. &lt;ol&gt; </b></code> -- ordered list的起始标签<br>
+有序表的输出如下图所示：
+<pre>
+    &lt;ol type="I"&gt;
+        &lt;li&gt;打开冰箱门&lt;li&gt;
+        &lt;li&gt;大象装进去&lt;li&gt;
+        &lt;li&gt;关闭冰箱门&lt;li&gt;
+    &lt;/ol&gt;
+</pre>
+得到以下输出：
+<ol type="1">
+    <li>打开冰箱门</li>
+    <li>大象装进去</li>
+    <li>关闭冰箱门</li>
+</ol>
+<code>通过更换标签的type的值，可以得到更多效果，"I"为罗马数字排序，"1"为数字排序.<br>
+有序列表和无序列表可以无限嵌套</code><br>
+<br>
+<b>4.定义列表</b>
+<pre>
+    &lt;dl&gt;
+    &lt;dt&gt;第一层元素&lt;/dt&gt;
+        &lt;dd&gt;第一层元素的子元素&lt;/dd&gt;
+        &lt;dd&gt;第一层元素的子元素&lt;/dd&gt;
+    &lt;dt&gt;第二次元素&lt;/dt&gt;
+        &lt;dd&gt;第二层元素的子元素&lt;/dd&gt;
+        &lt;dd&gt;第二层元素的子元素&lt;/dd&gt;
+    &lt;/dl&gt;
+</pre>
+<dl>
+    <dt>第一层元素</dt>
+        <dd>第一层元素的子元素</dd>
+        <dd>第一层元素的子元素</dd>
+    <dt>第二次元素</dt>
+        <dd>第二层元素的子元素</dd>
+        <dd>第二层元素的子元素</dd>
+</dl>
+
+<!-- --------------------------分隔符------------------------------- -->
+
+
+<h3>三.图片标签</h3>
+<code><b>1. &lt;img&gt;</b></code>图片标签
+
+<pre>
+    -支持的图片格式
+    1.jpg/jpeg
+    2.png位图/透明背景
+    3.gif动图
+
+    -src属性：资源路径
+    1.相对路径：一般用于站内资源
+        图片在同级目录，直接写文件名
+        图片在上级目录，../image_name
+        图片在下级目录 filename/image_name
+    2.绝对路径：访问站外资源时选用绝对路径，通常是http格式，如:
+    https://tse1-mm.cn.bing.net/th?id=OIP.0xNlcnLT4pV5C_RnxYbkrgHaEc&w=240&h=160&c=7&o=5&dpr=2&pid=1.7
+
+    -alt属性，当文件无法显示时显示的文本
+
+    -title属性,鼠标悬停时显示的文本
+</pre>
+<img title="Overwatch" alt="图片加载失败" src="overwatch.jpg">
+
+<!-- --------------------------分隔符------------------------------- -->
+
+<h3>四.超链接</h3>
+1. <code><b>&lt;a href="path"&gt;</b></code> --资源路径，可以是页面资源和文件资源，如果是文件资源，浏览器支持则浏览，不支持则下载<br>
+&nbsp;&nbsp;target=_blank可以在新窗口中显示页面
+<a target="_blank" href="http://www.tmooc.cn">More Information</a>
+<a href="overwatch.jpg">主题图片</a><br>
+<br>
+<b>2.图片超链接</b><br>
+<a href="http://www.bilibili.com"><img src="overwatch.jpg"></a><br>
+&nbsp;（如果a标签不写href属性，则就是一个纯文本）
+
+<!-- --------------------------分隔符------------------------------- -->
+
+<h3>五. 表格</h3>
+<b>1. 单元格</b>
+<table border="1" cellpadding="0">
+    <tr>
+        <td>1-1</td>
+        <td>1-2</td>
+        <td>1-3</td>
+    </tr>
+    <tr>
+        <td>2-1</td>
+        <td>2-2</td>
+        <td>2-3</td>
+    </tr>
+</table>
+<br>
+<b>2. 单元格合并</b>
+<pre> 代码为：
+    &lt;table border="1" cellpadding="0"&gt;
+    &lt;tr&gt;
+        &lt;td colspan="2" align="center"&gt;1-1&lt;/td&gt; <!--跨列-->
+        &lt;td&gt;1-2&lt;/td&gt;
+        &lt;td&gt;1-3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td rowspan="2"&gt;2-1&lt;/td&gt; <!--跨行合并-->
+        &lt;td colspan="3" align="center"&gt;2-2&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;3-2&lt;/td&gt;
+        &lt;td&gt;3-3&lt;/td&gt;
+        &lt;td&gt;3-4&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+输出效果为：
+</pre>
+<table border="1" cellpadding="0">
+    <tr>
+        <td colspan="2" align="center">1-1</td> <!--跨列-->
+        <td>1-2</td>
+        <td>1-3</td>
+    </tr>
+    <tr>
+        <td rowspan="2">2-1</td> <!--跨行合并-->
+        <td colspan="3" align="center">2-2</td>
+    </tr>
+    <tr>
+        <td>3-2</td>
+        <td>3-3</td>
+        <td>3-4</td>
+    </tr>
+</table>
+<br>
+<table border="1" cellpadding="0">
+    <tr>
+        <td colspan="2" align="center">😘</td>
+        <td rowspan="2">👿</td>
+    </tr>
+    <tr>
+        <td rowspan="2">👼</td>
+        <td align="center">🀄️</td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center">🤪</td>
+    </tr>
+
+</table>
+<br>
+<b>3. 订单表格</b>
+
+<table border="1">
+    <!--表格标题-->
+    <caption>Order</caption>
+    <tr>
+        <!-- th 表示表头 效果加粗，居中-->
+        <th>ID</th><th>Name</th><th>Price</th>
+    </tr>
+    <tr>
+        <td>001</td><td>Mouse</td><td>40</td>
+    </tr>
+    <tr>
+        <td>002</td><td>Keyboard</td><td>85</td>
+    </tr>
+    <tr>
+        <td>Total:</td><td colspan="2" align="center">125</td>
+    </tr>
+</table>
+<br>
+
+<b>4. 总结</b><br>
+--Table属性有：border边框粗细，cellpadding单元格距内容的距离，cellspacing
+单元格之间的距离<br>
+-- tr 代表行 <br>
+-- td 代表列 rowspan 跨行 colspan 跨列 <br>
+-- th 表头 <br>
+-- caption 表格标题 <br>
+
+<!-- -------------------------邪 魔 退 散------------------------------ -->
+
+<h3>六. Form表单</h3>
+表单的作用是获取用户输入的内容并提交给服务器，主要关注与表单控件<br>
+
+<form action="http://www.bilibili.com">
+    <!-- 任何控件必须有name属性,用于对传递的参数进行介绍
+     placeholder占位文本  value文本框内容默认文字  readonly无法对文本框更改-->
+    Username: <input type="text" name="username" placeholder="请输入用户名"
+            maxlength="20"><br>
+    Password: <input type="password" name="password" placeholder=
+        "请输入密码"> <br>
+    <!-- 单选框 value指定提交内容 checked默认选中
+        label与id的作用是扩大选中范围-->
+    Gender:<input type="radio" name="gender" value="m" id="m"><label for="m">Male</label>
+        <input type="radio" name="gender" value="f" id="f"> <label for="f">Female</label>
+        <input type="radio" name="gender" value="tm" id="tm"><label for="tm">Transgender Male</label>
+        <input type="radio" name="gender" value="tf" id="tf"><label for="tf">Transgender Female</label>
+
+    <!-- 多选框-->
+    Hobby: <input type="checkbox" name="hobby" value="chang">唱
+        <input type="checkbox" name="hobby" value="tiao">跳
+        <input type="checkbox" name="hobby" value="Rap">Rap
+        <input type="checkbox" name="hobby" value="cxq">篮球
+        <br>
+    <!--下拉选-->
+    City: <select>
+        <option>-请选择-</option>
+        <option value="van">新日暮里</option>
+        <option value="55k">卢本伟广场</option>
+        <option value="pdd">皮皮希望小学</option>
+    </select>
+    <br>
+
+    <!-- 文本域 -->
+
+    个人介绍: <textarea rows="5" cols="30" name="intro"
+        placeholder="大家好！我是练习时长两年半的个人练习生..."></textarea>
+    <br>
+    <!-- 日期选择器 -->
+    生日: <input type="date" name="birthday"> <br>
+    <!-- 文件选择器 -->
+    照片: <input type="file" name="pic"><br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+
+<!-- --------------------------分隔符------------------------------- -->
+
+<h3>六. 区块</h3>
+1. &lt;<b>div</b>&gt;
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<span>span1</span>
+<span>span2</span>
+<span>span3</span>
+
+
+</body>
+</html>

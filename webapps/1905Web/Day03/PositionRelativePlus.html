@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+
+        #big{
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+            margin: 100px;
+            overflow: hidden;
+            /*作位置参考，想相对谁，就在谁里面添加相对位置
+            这个定位遵循就近原则*/
+            position: relative;
+        }
+
+        #medium{
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            margin: 30px;
+
+        }
+
+        #small{
+            width: 50px;
+            height: 50px;
+            background-color: #0AA1ED;
+            /*
+            绝对定位
+             */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="big">
+        <div id="medium">
+            <div id="small"></div>
+        </div>
+    </div>
+
+</body>
+</html>

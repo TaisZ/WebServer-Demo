@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+
+    /*元素脱离文档流，元素从当前所在行向左或向右浮动
+    当碰到上级元素边框或其他浮动元素时停止
+    一行装不下会自动换行，有时会造成卡住 */
+        body>div{
+            width: 300px;
+            /*
+            当所有元素的所有子元素全部浮动
+            则自动识别的高度为0，通过以下样式
+            解决高度为0的问题:
+             */
+            overflow: hidden;
+            border: 1px solid red;
+        }
+
+        #d1{
+            width: 80px;
+            height: 50px;
+            background-color: blanchedalmond;
+            float: left;
+        }
+
+        #d2{
+            width: 80px;
+            height: 50px;
+            background-color: #0AA1ED;
+            float: left;
+        }
+
+        #d3{
+            width: 80px;
+            height: 50px;
+            background-color: coral;
+            float: left;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <div id="d1">div1</div>
+        <div id="d2">div2</div>
+        <div id="d3">div3</div>
+    </div>
+</body>
+</html>

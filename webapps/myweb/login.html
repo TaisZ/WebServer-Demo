@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登陆</title>
+</head>
+<body>
+<center>
+    <h1>
+        用户登陆
+    </h1>
+    <!-- 这里的login不能加.html后缀 因为返回的业务不带html方便让业务请求与静态资源区分
+    在业务请求配置文件Servlets里面可以看见-->
+    <form action="login" method="get">
+        <table border="1">
+            <tr>
+                <td>用户名</td>
+                <td><input name="username" type="text"></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input name="password" type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="登陆">
+                </td>
+
+        </table>
+    </form>
+</center>
+</body>
+</html>

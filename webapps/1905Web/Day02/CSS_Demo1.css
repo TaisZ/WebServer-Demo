@@ -1,0 +1,80 @@
+p{
+    color: chartreuse;
+}
+/**
+id选择器,选取页面中的id必须是唯一的
+ */
+#aqua{
+    color: aqua;
+}
+
+/*
+类选择器，选取页面中此class属性
+ */
+.cls1{
+    color: rebeccapurple;
+}
+
+/*
+分组选择器，选择包含span或aqua的所有内容 并集
+ */
+span,#aqua{
+    background-color: beige;
+}
+
+/**
+子孙后代选择器,选择div里面的div里面的span里面的所有
+ */
+div div span{
+    color: blue;
+}
+
+/*
+子元素选择器，选择div里面的div里面的span
+ */
+div>div>span{
+    color: crimson;
+}
+
+/**
+属性选择器，
+ */
+input[type="text"]{
+    background-color: deeppink;
+}
+
+
+
+/**伪类选择器：
+ */
+
+/**
+访问过状态
+ */
+a:visited{
+    color: palegoldenrod;
+}
+
+/**
+未访问状态
+ */
+a:link{
+    color: dimgrey;
+}
+
+/*
+悬停时
+ */
+a:hover{
+    color: #0000ff;
+}
+
+
+
+/*
+任意元素选择器
+ */
+*{
+    border: 1px solid rgb(255,255,255);
+;
+}

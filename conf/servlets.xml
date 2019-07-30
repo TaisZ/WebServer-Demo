@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<servlets>
+        <!-- 这里后缀不能加.html
+        因为业务处理URI，如：http://localhost:8088/myweb/login?username=Tais1&password=123456
+        是没有.html后缀的-->
+        <servlet path="/myweb/reg" className="com.webserver.servlet.RegServlet" />
+        <servlet path="/myweb/login" className="com.webserver.servlet.LoginServlet" />
+
+</servlets>
