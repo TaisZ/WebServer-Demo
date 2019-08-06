@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>订单练习</h3>
+    <input type="checkbox" id="i1" value='50'>
+    <label for="i1">鼠标50¥</label><br>
+    <input type="checkbox" id="i2" value="150">
+    <label for="i2">键盘150¥</label><br>
+    <input type="checkbox" id="i3" value="3550">
+    <label for="i3">手机3550¥</label><br>
+    <input type="checkbox" id="i4" value="9000">
+    <label for="i4">笔记本电脑9000¥</label><br>
+    <input type="checkbox" id="i5">
+    <label for="i5">全选</label><br>
+    <p>总价：0¥</p>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $('input').click(function () {
+            if (this.id==='i5'){
+                $(this).siblings("input").attr("checked",this.checked);
+            }
+
+            var total=0;
+            $("input[value]").each(function () {
+                if (this.checked){
+                    total+=parseInt(this.value);
+                }
+            });
+            $('p').text("总价："+total+"¥");
+        });
+
+    </script>
+</body>
+</html>

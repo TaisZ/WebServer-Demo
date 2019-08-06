@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!--http://doc.canglaoshi.org/bootstrap3/components/index.html#nav-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bootstrap Template</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="../bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+</head>
+<body>
+  <div class="well text-center ">Hello World</div>
+  <a class="btn btn-default btn-xs" href="#" role="button">Link</a>
+  <button class="btn btn-success btn-sm" type="submit">Button</button>
+  <input class="btn btn-info" type="button" value="Input">
+  <input class="btn btn-warning btn-lg" type="submit" value="Submit">
+
+  <span class="fa fa-bar-chart">字体图标</span>
+
+  <!--标签页式导航条-->
+  <ul class="nav nav-tabs">
+    <li role="presentation" class="active" ><a href="#">主页</a></li>
+    <li role="presentation" ><a href="#">详细资料</a></li>
+    <li role="presentation"><a href="#">会话</a></li>
+  </ul>
+
+  <!--胶囊式式导航条-->
+  <ul class="nav nav-pills">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="#">Profile</a></li>
+    <li role="presentation"><a href="#">Messages</a></li>
+  </ul>
+
+
+
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="../bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/respond.min.js"></script>
+<script>
+    $("li").click(function () {
+        $(this).attr("class","active");
+        $(this).siblings().attr("class","");
+    });
+</script>
+</html>

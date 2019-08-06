@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table{
+            border: 1px solid red;
+            border-collapse: collapse;
+        }
+        td,th{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <caption>特价商品</caption>
+
+    <tr>
+        <th>商品名称</th><th>商品单价</th>
+        <th>商品库存</th><th>操作</th>
+    </tr>
+    <tr>
+        <td>华为手机</td><td>5000</td><td>100</td>
+        <td><input type="button" value="添加到购物车"></td>
+    </tr>
+    <tr>
+        <td>苹果手机</td><td>7000</td><td>500</td>
+        <td><input type="button" value="添加到购物车"></td>
+    </tr>
+    <tr>
+        <td>篮球</td><td>200</td><td>300</td>
+        <td><input type="button" value="添加到购物车"></td>
+    </tr>
+    <tr>
+        <td>鼠标</td><td>50</td><td>40</td>
+        <td><input type="button" value="添加到购物车"></td>
+    </tr>
+
+</table>
+
+<table>
+    <caption>特价商品</caption>
+    <tr>
+        <th>商品名称</th><th>商品单价</th>
+        <th>商品库存</th><th>商品金额</th><th>操作</th>
+    </tr>
+    <tr ><td colspan="5" id="total">总价：0 ¥</td></tr>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $('input').click(function () {
+        var tr=$('<tr></tr>');
+        var nameTd= $('<td></td>');
+        var priceTd= $('<td></td>');
+        var numTd= $('<td><input  type="button" value="-" onclick="numfn(-1)">' +
+            '<span>1</span></span><input id="num" type="button" value="+" onclick="numfn(1)"></td>')
+        var moneyTd= $('<td></td>');
+        var delTd= $('<td><input type="button" value="删除"></td>');
+        //删除操作
+        delTd.children().click(function () {
+            $(this).parent().parent().remove();
+            total();
+        })
+
+        //给td赋值，得到商品名称
+        var isEx=false;
+        var name= $(this).parent().siblings().eq(0).text();
+        $('table:last tr').each(function () {
+            if (name===$(this).children().eq(0).text()){
+                isEx=true;
+            }
+        });
+
+        if (!isEx){
+            var price= $(this).parent().siblings().eq(1).text();
+
+            nameTd.text(name);
+            priceTd.text(price);
+            moneyTd.text(price);
+
+            //把td添加到tr,把tr添加到table中
+            tr.append(nameTd);
+            tr.append(priceTd);
+            tr.append(numTd);
+            tr.append(moneyTd);
+            tr.append(delTd);
+            //添加到总价前面
+            $('tr:last').before(tr);
+            total();
+        }
+    });
+
+    //声明数量改变方法
+    function numfn(x) {
+        //得到原来的数值
+        //获取事件源（添加事件的标签）
+        var obj= event.target || event.srcElement;
+        //通过事件源按钮，获取span兄弟里面的文本
+
+        var num= parseInt( $(obj).siblings('span').text());
+        num+=x;
+        num=num<1? 1:num;
+        $(obj).siblings('span').text(num);
+
+        //计算商品价格
+        var price= $(obj).parent().prev().text();
+        $(obj).parent().next().text(price*num);
+
+        //计算总价
+        total();
+    }
+
+    function total() {
+        var total= 0;
+        $('table:last tr').each(function () {
+            var tem=  parseInt($(this).children().eq(3).text());
+            if (!isNaN(tem)) {
+                total+=tem;
+            }
+        });
+
+        $('#total').text('总价：'+total+'¥');
+    }
+
+    function addELe(ele) {
+
+    }
+</script>
+</body>
+</html>

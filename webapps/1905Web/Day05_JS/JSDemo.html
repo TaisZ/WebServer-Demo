@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript</title>
+</head>
+<body>
+  <input type="button" value="内联按钮" onclick="alert('内联触发！')">
+  <input type="text" id="i1">
+  <input type="button" value="button1" onclick="myfn()">
+  <div id="d1"></div>
+  <script>
+    function myfn() {
+       var s=i1.value;
+       d1.innerText=s*s;
+    }
+  </script>
+
+<!-- -----内部触发------ -->
+<script type="text/javascript">
+  内部触发
+</script>
+
+<!-- ----引入外部js文件----
+如果引入外部文件，则不能在标签体内继续写js代码  -->
+<script type="text/javascript" src="MyFirstJS.js"></script>
+</body>
+</html>

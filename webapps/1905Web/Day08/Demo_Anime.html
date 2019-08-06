@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style type="text/css">
+    img{
+      width: 400px;
+      height: 300px;
+
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+
+<input type="button" value="隐藏">
+<input type="button" value="显示">
+<input type="button" value="淡出">
+<input type="button" value="淡入">
+<input type="button" value="上滑">
+<input type="button" value="下滑">
+<input type="button" value="自定义">
+<hr>
+
+<img src="https://static2.accorhotels.cn/ho/b5f3_ho_00_p_1024x768.jpg?d=1d676edd968203b930f67d2ffbfd98f96de6fede">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  $("input").click(function () {
+    if (this.value==="隐藏"){
+        $('img').hide();  //hide可以加参数 表示消失所用时间，消失后执行的操作
+    }
+    if (this.value==="显示"){
+        $('img').show();
+    }
+    if (this.value==="淡出"){
+          $('img').fadeOut();
+    }
+    if (this.value==="淡入"){
+          $('img').fadeIn();
+    }
+    if (this.value==="上滑"){
+          $('img').slideUp();
+    }
+    if (this.value==="下滑"){
+          $('img').slideDown();
+    }
+    if (this.value==="自定义"){
+          $('img').animate({'left':"200px"},1000)
+              .animate({"top":"200px"},1000)
+              .animate({"left":"0"},1000)
+              .animate({'top':"0"},1000)
+              .animate({"width":"500px",'height':'360px'},1000);
+    }
+
+  });
+
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+
+<body>
+<input type="text" id="i1">
+<input type="button" id="b1" value="button">
+
+  <script>
+    //jq页面加载完成事件
+    $(function () {
+       // alert("引入成功")
+        //jq动态绑定事件绑定
+        $("#b1").click(function () {
+            //弹出用户输入的文本内容
+            alert($("#i1").val())
+        })
+    });
+  </script>
+</body>
+</html>

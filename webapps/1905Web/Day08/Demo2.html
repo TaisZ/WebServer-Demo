@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" placeholder="姓名">
+    <input type="text" placeholder="年龄">
+    <input type="text" placeholder="工资">
+    <input type="text" placeholder="部门">
+    <input type="button" value="添加">
+    <hr>
+    <table border="1">
+        <caption>员工表</caption>
+        <tr>
+            <th>姓名</th><th>年龄</th>
+            <th>工资</th><th>部门</th><th>操作</th>
+        </tr>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        $("input:eq(4)").click(function () {
+            var tr = $("<tr></tr>");
+            var nameTd= $("<td></td>");
+            nameTd.text($("input:eq(0)").val());
+            var ageTd= $("<td></td>");
+            ageTd.text($("input:eq(1)").val());
+            var salTd= $("<td></td>");
+            salTd.text($("input:eq(2)").val());
+            var depTd= $("<td></td>");
+            depTd.text($("input:eq(3)").val());
+
+            var delTd= $("<td><input type='button' value='删除'></td>");
+
+            tr.append(nameTd);
+            tr.append(ageTd);
+            tr.append(salTd);
+            tr.append(depTd);
+            tr.append(delTd);
+            $('table').append(tr);
+
+            delTd.children().click(function () {
+                //通过按钮找到td再找到tr并删除
+               $(this).parent().parent().remove();
+            });
+        });
+
+    </script>
+
+</body>
+</html>

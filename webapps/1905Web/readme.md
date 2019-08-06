@@ -35,7 +35,7 @@
 - 下拉选 <select name>  <option value="yyyy" selected >xxxx</option>
 - 日期选择  type="date" 
 - 文件选择  type="file"  
-- 文本域   <textarea name  rows   cols placeholder>
+- 文本域   <textarea name rows cols placeholder>
 - 提交按钮  type="submit"
 - 重置按钮   type="reset"
 - 自定义按钮  type="button"
@@ -113,6 +113,7 @@
 
 
 ###颜色赋值
+
 - 三原色  红 绿 蓝   red green blue  每个颜色取值范围0-255   
 
 1. 颜色单词赋值
@@ -120,6 +121,7 @@
 3. 3位16进制赋值  #f00   每一位表示一个颜色
 4. 3位10进制赋值  rgb(255,0,0) 
 5. 4位10进制赋值  rgba(255,0,0,0-1)   a=alpha 透明度  值越小越透明
+
 ###背景图片
 
 		/* 背景图片 */
@@ -168,9 +170,85 @@
 
 
 
+###文本相关的样式
+1. 水平对齐方式
+	text-align:left/right/center
+2. 文本修饰
+	text-decoration:overline/underline/line-through/none;
+3. 文本颜色
+	color:red;
+4. 文本阴影
+	text-shadow:颜色 x便移值 y偏移值 浓度
+5. 行高
+	line-height:像素;
+###字体相关
+1. 字体大小
+	font-size:30px;
+2. 字体加粗
+	font-weight:bold/normal(去掉自带加粗);
+3. 斜体
+	font-style:italic;
+4. 字体设置
+	font-family：xxx,xxx,xxx;
+5. 字体大小+字体设置
+	font: 30px xxx,xxx,xxx;
+###CSS的三大特性
+1. 继承性：元素可以继承上级元素的文本和字体相关样式，个别标签自带效果不受继承影响 比如：a标签自带效果，h1-h6
+2. 层叠性：不同的选择器选择到同一个标签时，如果作用的样式不同则全部层叠生效，如果设置相同的样式则由优先级决定
+3. 优先级：作用范围越小优先级越高， id>class>标签名>继承(属于间接选中)
+
+###定位方式4+1
+####position定位之文档流定位(静态定位)
+- position:static（默认）
+- 定位特点：块级元素从上到下依次排列，行内元素从左向右依次排列 
+- 如何控制元素的位置？ 通过外边距margin
+####position定位之相对定位
+- position:relative;
+- 定位特点： 元素不会脱离文档流(元素仍然占着位置)，元素通过top/right/left/bottom相对于元素初始位置做位置偏移。
+####position定位之绝对定位
+- position:absolute;
+- 定位特点：元素脱离文档流(不占原有位置)，元素通过top/right/left/bottom相对于窗口或某一个上级元素(添加相对定位的上级元素)做位置偏移。
+####position定位之固定定位
+- position:fixed;
+- 定位特点：元素脱离文档流,元素top/right/left/bottom相对于窗口做位置偏移
+###浮动定位
+- float:left/right;
+- 定位特点：元素脱离文档流，元素从当前所在行向左或向右浮动，当撞到上级元素边框或其它浮动元素停止
+- 一行装不下会自动换行，换行时有可能被卡住
+- 当元素的所有子元素全部浮动时则自动识别的高度为0，通过给元素添加overflow：hidden解决
+###overflow溢出设置
+- 超出显示：visible（默认）
+- 超出隐藏：hidden
+- 超出滚动显示：scroll
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+###复制整行快捷键
+ctrl + alt + 向下箭头
+- 关掉系统自带的快捷键： 右上角-》设置-》键盘-》快捷键-》导航-》最下面有个移动到下层工作区，删除即可 
+
+
+
+
+
+
+
+
+
+ 
 
 
  

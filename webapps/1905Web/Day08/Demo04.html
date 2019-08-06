@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" onclick="alert('事件触发')">
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  //3秒执行一次的定时器
+  setTimeout (function () {
+      $('input').trigger('click');
+  },3000);
+
+  $('div').hover(function () {
+    //鼠标移入时执行的操作
+    $(this).css("color","red");
+  },function () {
+    //鼠标移出时执行的操作
+      $(this).css("color","green");
+  });
+</script>
+</body>
+</html>

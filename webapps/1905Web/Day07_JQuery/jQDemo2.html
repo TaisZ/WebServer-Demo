@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+
+  <input type="text" id="i1">
+  <input type="button" value="js转jq" id="b1">
+  <input type="button" value="jq转js" id="b2">
+  <script>
+    //标签名选择器
+    $("#b1").click(function () {
+       var js= document.getElementById("i1");
+       //把js对象转成jq对象
+        alert($(js).val());
+    });
+
+    $("#b2").click(function () {
+        var jq= $('#i1');
+        //jq对象转成js对象，jq对象实际上就是对数组的扩展
+        //本质上就是一个数组，装个js对象
+        var js= jq[0];
+        alert(js.value)
+    });
+  </script>
+
+</body>
+</html>
